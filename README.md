@@ -8,13 +8,11 @@ Self-Driving Car Engineer Nanodegree Program
 
  * The model includes the vehicle's position in x and y , orientation angle (psi), and velocity, as well as the cross-track error and psi error (epsi). Actuator outputs are acceleration and delta (steering angle). The model uses the state of the previous time stamp and calculates the next state using the following equations
 
-![Global Kinematic Model Equations](Equations.png)
+![Global Kinematic Model Equations](./Equations.png)
 
 * The cross track error and the psi error are calculated using the equations below:
-<img src="cte.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-![Error Equations](psi.png)
+![Error Equations](./cte.png)
+![Error Equations](./psi.png)
 
 ---
 * Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
@@ -30,7 +28,6 @@ Self-Driving Car Engineer Nanodegree Program
    * result.push_back(solution.x[a_start+1]);
 
 ---
-
 ## Dependencies
 
 * cmake >= 3.5
