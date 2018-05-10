@@ -11,7 +11,9 @@ Self-Driving Car Engineer Nanodegree Program
 ![Global Kinematic Model Equations](Equations.png)
 
 * The cross track error and the psi error are calculated using the equations below:
-![Error Equations](cte.png)
+<img src="cte.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 ![Error Equations](psi.png)
 
 ---
