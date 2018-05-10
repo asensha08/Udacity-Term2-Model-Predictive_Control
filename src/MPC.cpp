@@ -240,8 +240,8 @@ vector<double> MPC::Solve(Eigen::VectorXd state, Eigen::VectorXd coeffs) {
   // creates a 2 element double vector.
   vector<double> result;
 
-  result.push_back(solution.x[delta_start+1]);
-  result.push_back(solution.x[a_start+1]);
+  result.push_back(solution.x[delta_start+1]); // To account for latency, the second ouput is considered the first output,as dt =0.1 =100 millisecond
+  result.push_back(solution.x[a_start+1]);// To account for latency, the second ouput is considered the first output,as dt =0.1 =100 millisecond
 
   for (unsigned int i = 0; i < N-1; i++) {
     result.push_back(solution.x[x_start + i + 1]);

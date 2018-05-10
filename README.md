@@ -2,6 +2,32 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Rubric Questions Answered
+
+* Model Description. This includes the state, actuators and update equations.
+
+ * The model includes the vehicle's position in x and y , orientation angle (psi), and velocity, as well as the cross-track error and psi error (epsi). Actuator outputs are acceleration and delta (steering angle). The model uses the state of the previous time stamp and calculates the next state using the following equations
+
+![Global Kinematic Model Equations](Equations.png)
+
+* The cross track error and the psi error are calculated using the equations below:
+![Error Equations](cte.png)
+![Error Equations](psi.png)
+
+---
+* Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
+
+ * The values of N and dt were chosen in pairs.The value tuned was N=10 and dt=0.1 seconds. N=10 and dt =0.05 triggered very small trajectories which led oscillations around the reference trajectory. If N was 5, then converging time was high and there were oscillations. N=20 was very unstable.
+
+* The waypoints were preprocessed by transforming them to the vehicle's perspective (main.cpp lines 104-111). This helps to fit a polynomial to the waypoints because as the vehicles's position and heading is zero. Otherwise the calculation of the crosstrack error can be complex.
+
+* Model Predictive Control with Latency. The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
+
+  * This was tricky but a simple solution was implemented. We have the states of the generated trajectory and is 0.1 seconds apart(dt=0.1) so as we take the first output of the 'delta'(steering angle) and a(throttle) is sent to the simulator. Instead I used the second output. See lines 243 and 244 in MPC.cpp.
+   * result.push_back(solution.x[delta_start+1]); 
+   * result.push_back(solution.x[a_start+1]);
+
+---
 
 ## Dependencies
 
