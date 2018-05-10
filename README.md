@@ -8,11 +8,11 @@ Self-Driving Car Engineer Nanodegree Program
 
  * The model includes the vehicle's position in x and y , orientation angle (psi), and velocity, as well as the cross-track error and psi error (epsi). Actuator outputs are acceleration and delta (steering angle). The model uses the state of the previous time stamp and calculates the next state using the following equations
 
-![Global Kinematic Model Equations](./Equations.png)
+![Global Kinematic Model Equations](F:\Udacity-Projects\Udacity-Term2-Model Predictive Control\CarND-MPC-Project/Equations.png)
 
 * The cross track error and the psi error are calculated using the equations below:
-![Error Equations](./cte.png)
-![Error Equations](./psi.png)
+![Error Equations](F:\Udacity-Projects\Udacity-Term2-Model Predictive Control\CarND-MPC-Project.png)
+![Error Equations](F:\Udacity-Projects\Udacity-Term2-Model Predictive Control\CarND-MPC-Project/psi.png)
 
 ---
 * Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
