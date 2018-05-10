@@ -15,15 +15,11 @@ Self-Driving Car Engineer Nanodegree Program
 ![Error Equations](https://github.com/asensha08/Udacity-Term2-Model-Predictive_Control/blob/master/psi.PNG)
 
 ---
-* Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
-
- * The values of N and dt were chosen in pairs.The value tuned was N=10 and dt=0.1 seconds. N=10 and dt =0.05 triggered very small trajectories which led oscillations around the reference trajectory. If N was 5, then converging time was high and there were oscillations. N=20 was very unstable.
+* Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried: The values of N and dt were chosen in pairs.The value tuned was N=10 and dt=0.1 seconds. N=10 and dt =0.05 triggered very small trajectories which led oscillations around the reference trajectory. If N was 5, then converging time was high and there were oscillations. N=20 was very unstable.
 
 * The waypoints were preprocessed by transforming them to the vehicle's perspective (main.cpp lines 104-111). This helps to fit a polynomial to the waypoints because as the vehicles's position and heading is zero. Otherwise the calculation of the crosstrack error can be complex.
 
-* Model Predictive Control with Latency. The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
-
-  * This was tricky but a simple solution was implemented. We have the states of the generated trajectory and is 0.1 seconds apart(dt=0.1) so as we take the first output of the 'delta'(steering angle) and a(throttle) is sent to the simulator. Instead I used the second output. See lines 243 and 244 in MPC.cpp.
+* Model Predictive Control with Latency. The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.This was tricky but a simple solution was implemented. We have the states of the generated trajectory and is 0.1 seconds apart(dt=0.1) so as we take the first output of the 'delta'(steering angle) and a(throttle) is sent to the simulator. Instead I used the second output. See lines 243 and 244 in MPC.cpp.
    * result.push_back(solution.x[delta_start+1]); 
    * result.push_back(solution.x[a_start+1]);
 
